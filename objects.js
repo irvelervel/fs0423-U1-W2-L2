@@ -61,3 +61,36 @@ delete comedian.gender // eliminata la proprietà "gender"
 console.log(comedian)
 
 console.log(comedian.hairColor) // undefined, perchè la proprietà hairColor non esiste nell'oggetto!
+
+// PICCOLO TRANELLO :)
+
+let a = 5
+let b = a
+b = 10
+
+// quanto vale a? vale 5!
+console.log(a) // 5
+
+const objA = {
+  name: 'Stefano',
+}
+
+const objB = objA
+
+objB.name = 'Mario'
+
+// qual è il valore di name in objA?
+console.log(objA.name) // 'Mario'
+
+// come faccio effettivamente a creare un oggetto "separato" e indipendente da objA?
+
+const objC = {
+  name: 'Stefano',
+}
+
+// Object.assign() crea effettivamente un "clone" di objC e lo chiama objD
+const objD = Object.assign({}, objC)
+
+objC.name = 'Mario'
+
+console.log(objD.name) // 'Stefano'
